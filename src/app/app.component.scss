@@ -1,0 +1,49 @@
+$fontSize: 2rem;
+$itemWidth: 6rem;
+$borderRadius: 0.5rem;
+$borderStyle: 2px solid black;
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(59, 59, 59);
+
+  .board {
+    margin: 0.5 * $fontSize;
+    width: $itemWidth;
+
+    .add,
+    .min {
+      background-color: white;
+      height: $fontSize;
+      cursor: pointer;
+      font-size: $fontSize;
+      line-height: $fontSize;
+      border: $borderStyle;
+      margin: 0.2rem 0;
+    }
+
+    .add {
+      border-top-left-radius: $borderRadius;
+      border-top-right-radius: $borderRadius;
+    }
+
+    .min {
+      border-bottom-left-radius: $borderRadius;
+      border-bottom-right-radius: $borderRadius;
+    }
+
+    .score {
+      background-color: white;
+      height: 1.5 * $fontSize;
+      font-size: 1.5 * $fontSize;
+      line-height: 1.5 * $fontSize;
+      border: $borderStyle;
+    }
+  }
+}
