@@ -1,7 +1,9 @@
-$fontSize: 2rem;
-$itemWidth: 6rem;
-$borderRadius: 0.5rem;
-$borderStyle: 2px solid black;
+$scale: 4;
+
+$fontSize: $scale * 2rem;
+$itemWidth: $scale * 6rem;
+$borderRadius: $scale * 0.5rem;
+$borderStyle: ($scale * 0.1rem) solid black;
 
 .wrapper {
   width: 100vw;
@@ -25,7 +27,7 @@ $borderStyle: 2px solid black;
       font-size: $fontSize;
       line-height: $fontSize;
       border: $borderStyle;
-      margin: 0.2rem 0;
+      margin: ($scale * 0.2rem) 0;
     }
 
     .add {
