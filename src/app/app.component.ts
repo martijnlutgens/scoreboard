@@ -31,4 +31,9 @@ export class AppComponent {
       this.score2--;
     }
   }
-}
+
+  reset() {
+    this.score1=0;
+    this.score2=0;
+    }
+  }

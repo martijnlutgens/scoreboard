@@ -9,43 +9,61 @@ $borderStyle: ($scale * 0.1rem) solid black;
   width: 100vw;
   height: 100vh;
   user-select: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   background-color: rgb(59, 59, 59);
 
-  .board {
-    margin: 0.5 * $fontSize;
-    width: $itemWidth;
+  .board-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    .board {
+      margin: 0.5 * $fontSize;
+      width: $itemWidth;
 
-    .add,
-    .min {
+      .add,
+      .min {
+        background-color: white;
+        height: $fontSize;
+        cursor: pointer;
+        font-size: $fontSize;
+        line-height: $fontSize;
+        border: $borderStyle;
+        margin: ($scale * 0.2rem) 0;
+      }
+
+      .add {
+        border-top-left-radius: $borderRadius;
+        border-top-right-radius: $borderRadius;
+      }
+
+      .min {
+        border-bottom-left-radius: $borderRadius;
+        border-bottom-right-radius: $borderRadius;
+      }
+
+      .score {
+        background-color: white;
+        height: 1.5 * $fontSize;
+        font-size: 1.5 * $fontSize;
+        line-height: 1.5 * $fontSize;
+        border: $borderStyle;
+      }
+    }
+  }
+  .reset-wrapper {
+    display: flex;
+    justify-content: center;
+
+    .reset {
+      font-size: 0.5 * $fontSize;
       background-color: white;
-      height: $fontSize;
       cursor: pointer;
-      font-size: $fontSize;
-      line-height: $fontSize;
+      text-align: center;
+      height: 1.5;
       border: $borderStyle;
-      margin: ($scale * 0.2rem) 0;
-    }
-
-    .add {
-      border-top-left-radius: $borderRadius;
-      border-top-right-radius: $borderRadius;
-    }
-
-    .min {
-      border-bottom-left-radius: $borderRadius;
-      border-bottom-right-radius: $borderRadius;
-    }
-
-    .score {
-      background-color: white;
-      height: 1.5 * $fontSize;
-      font-size: 1.5 * $fontSize;
-      line-height: 1.5 * $fontSize;
-      border: $borderStyle;
+      width: $itemWidth;
+      border-radius: $borderRadius;
     }
   }
 }

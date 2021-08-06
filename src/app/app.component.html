@@ -1,24 +1,29 @@
 <div class="wrapper">
-<div class="board">
-  <div class="add" (click)="add1()">
-    +
+  <div class="board-wrapper">
+    <div class="board">
+      <div class="add" (click)="add1()">
+        +
+      </div>
+      <div class="score">
+        {{score1}}
+      </div>
+      <div class="min" (click)="min1()">
+        -
+      </div>
+    </div>
+    <div class="board">
+      <div class="add" (click)="add2()">
+        +
+      </div>
+      <div class="score">
+        {{score2}}
+      </div>
+      <div class="min" (click)="min2()">
+        -
+      </div>
+    </div>
   </div>
-  <div class="score">
-    {{score1}}
+  <div class= "reset-wrapper">
+    <div class="reset" (click)="reset()">Reset</div>
   </div>
-  <div class="min" (click)="min1()">
-    -
-  </div>
-</div>
-<div class="board">
-  <div class="add" (click)="add2()">
-    +
-  </div>
-  <div class="score">
-    {{score2}}
-  </div>
-  <div class="min" (click)="min2()">
-    -
-  </div>
-</div>
 </div>
