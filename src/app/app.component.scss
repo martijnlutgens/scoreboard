@@ -51,21 +51,21 @@ $itemMargin: 0.5 * $fontSize;
         border: $borderStyle;
       }
     }
+    .set {
+      font-size: 0.5 * $fontSize;
+      background-color: white;
+      height: 1.5;
+      width: 0.2 * $itemWidth;
+      border: $borderStyle;
+      border-radius: $borderRadius;
+      margin: 0.5 * $itemMargin;
+    }
   }
-  .re-set-wrapper {
+  .reset-wrapper {
     display: flex;
     justify-content: center;
     flex-direction: row;
 
-    .set {
-      font-size: 0.5 * $fontSize;
-      background-color: white;
-      text-align: center;
-      height: 1.5;
-      border: $borderStyle;
-      width: 0.6 * $itemWidth - $itemMargin;
-      border-radius: $borderRadius;
-    }
     .reset {
       font-size: 0.5 * $fontSize;
       background-color: white;
