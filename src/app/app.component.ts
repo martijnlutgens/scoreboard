@@ -14,7 +14,7 @@ export class AppComponent {
   add1() {
     if (this.score1 < 999) {
       this.score1++;
-      if (this.score1 > 10 && this.score1 > this.score2) {
+      if (this.score1 > 10 && this.score1 > (this.score2 + 1)) {
         this.set1++;
         this.score1 = 0;
         this.score2 = 0;
@@ -30,7 +30,7 @@ export class AppComponent {
   add2() {
     if (this.score2 < 999) {
       this.score2++;
-      if (this.score2 > 10 && this.score1 < this.score2) {
+      if (this.score2 > 10 && (this.score1 + 1) < this.score2) {
         this.set2++;
         this.score1 = 0;
         this.score2 = 0;
