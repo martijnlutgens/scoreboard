@@ -4,6 +4,7 @@ $fontSize: $scale * 2rem;
 $itemWidth: $scale * 6rem;
 $borderRadius: $scale * 0.5rem;
 $borderStyle: ($scale * 0.1rem) solid black;
+$itemMargin: 0.5 * $fontSize;
 
 .wrapper {
   width: 100vw;
@@ -18,7 +19,7 @@ $borderStyle: ($scale * 0.1rem) solid black;
     text-align: center;
     
     .board {
-      margin: 0.5 * $fontSize;
+      margin: $itemMargin;
       width: $itemWidth;
 
       .add,
@@ -29,7 +30,7 @@ $borderStyle: ($scale * 0.1rem) solid black;
         font-size: $fontSize;
         line-height: $fontSize;
         border: $borderStyle;
-        margin: ($scale * 0.2rem) 0;
+        margin: $scale * 0.2rem 0;
       }
 
       .add {
@@ -51,10 +52,20 @@ $borderStyle: ($scale * 0.1rem) solid black;
       }
     }
   }
-  .reset-wrapper {
+  .re-set-wrapper {
     display: flex;
     justify-content: center;
+    flex-direction: row;
 
+    .set {
+      font-size: 0.5 * $fontSize;
+      background-color: white;
+      text-align: center;
+      height: 1.5;
+      border: $borderStyle;
+      width: 0.6 * $itemWidth - $itemMargin;
+      border-radius: $borderRadius;
+    }
     .reset {
       font-size: 0.5 * $fontSize;
       background-color: white;
@@ -62,8 +73,9 @@ $borderStyle: ($scale * 0.1rem) solid black;
       text-align: center;
       height: 1.5;
       border: $borderStyle;
-      width: $itemWidth;
+      width: $itemWidth - 2 * $itemMargin;
       border-radius: $borderRadius;
+      margin: 0 0.5 * $itemMargin;
     }
   }
 }
