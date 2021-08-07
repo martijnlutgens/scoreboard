@@ -1,35 +1,40 @@
-<div class="wrapper">
-  <div class="board-wrapper">
-    <div class="board">
-      <div class="add" (click)="add1()">
-        +
-      </div>
-      <div class="score">
-        {{score1}}
-      </div>
-      <div class="min" (click)="min1()">
-        -
-      </div>
+<div class="board-wrapper">
+  <div class="board">
+    <div class="add" (click)="add1()">
+      +
     </div>
-    <div class="set">
-      {{set1}}
+    <div class="score">
+      {{score1}}
     </div>
-    <div class="set">
-      {{set2}}
-    </div>
-    <div class="board">
-      <div class="add" (click)="add2()">
-        +
-      </div>
-      <div class="score">
-        {{score2}}
-      </div>
-      <div class="min" (click)="min2()">
-        -
-      </div>
+    <div class="min" (click)="min1()">
+      -
     </div>
   </div>
-  <div class="reset-wrapper">
-    <div class="reset" (click)="reset()">Reset</div>
+  <div class="middle-board">
+    <div class="set-message">
+      <div>set</div>
+    </div>
+    <div class="sets">
+      <div class="set">
+        {{set1}}
+      </div>
+      <div class="set">
+        {{set2}}
+      </div>
+    </div>
+    <div class="reset-wrapper">
+      <div class="reset" (click)="reset()">Reset</div>
+    </div>
+  </div>
+  <div class="board">
+    <div class="add" (click)="add2()">
+      +
+    </div>
+    <div class="score">
+      {{score2}}
+    </div>
+    <div class="min" (click)="min2()">
+      -
+    </div>
   </div>
 </div>
