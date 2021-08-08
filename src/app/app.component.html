@@ -1,25 +1,25 @@
 <div class="board-wrapper">
   <div class="board">
-    <div class="add" (click)="add1()">
+    <div class="add" (click)="add(1)">
       +
     </div>
     <div class="score">
-      {{score1}}
+      {{game.player1.score}}
     </div>
-    <div class="min" (click)="min1()">
+    <div class="min" (click)="min(1)">
       -
     </div>
   </div>
   <div class="middle-board">
     <div class="set-message">
-      <div>set</div>
+      <div [hidden]="!showSet">{{winText}}</div>
     </div>
     <div class="sets">
       <div class="set">
-        {{set1}}
+        {{game.player1.sets}}
       </div>
       <div class="set">
-        {{set2}}
+        {{game.player2.sets}}
       </div>
     </div>
     <div class="reset-wrapper">
@@ -27,13 +27,13 @@
     </div>
   </div>
   <div class="board">
-    <div class="add" (click)="add2()">
+    <div class="add" (click)="add(2)">
       +
     </div>
     <div class="score">
-      {{score2}}
+      {{game.player2.score}}
     </div>
-    <div class="min" (click)="min2()">
+    <div class="min" (click)="min(2)">
       -
     </div>
   </div>

@@ -57,7 +57,9 @@ $itemMargin: 0.5 * $fontSize;
     justify-content: space-evenly;
 
     .set-message {
-      font-size: 0.5 * $fontSize;
+      color: white;
+      font-size: 0.4 * $fontSize;
+      min-height: 0.6 * $fontSize;
     }
 
     .sets {
