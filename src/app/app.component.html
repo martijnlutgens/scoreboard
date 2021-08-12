@@ -12,7 +12,7 @@
   </div>
   <div class="middle-board">
     <div class="set-message">
-      <div [hidden]="!showSet">{{winText}}</div>
+      <div [hidden]="!showWinText">{{winText}}</div>
     </div>
     <div class="sets">
       <div class="set">
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="reset-wrapper">
-      <div class="reset" (click)="reset()">Reset</div>
+      <div class="reset" (click)="resetNext()">{{reset}}</div>
     </div>
   </div>
   <div class="board">

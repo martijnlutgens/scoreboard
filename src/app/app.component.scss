@@ -91,7 +91,7 @@ $itemMargin: 0.5 * $fontSize;
         text-align: center;
         height: 1.5;
         border: $borderStyle;
-        width: $itemWidth - 2 * $itemMargin;
+        width: $itemWidth;
         border-radius: $borderRadius;
         margin: 0 0.5 * $itemMargin;
       }
