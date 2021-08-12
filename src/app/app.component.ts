@@ -8,9 +8,11 @@ import { Game } from './models/model';
 })
 export class AppComponent {
   game: Game;
-
-  showSet = false;
+  showWinText = false;
   winText = 'Speler 1';
+  useable = true;
+  reset = 'Reset';
+  winner = 0;
 
   constructor() {
     this.game = this.newGame();
@@ -30,7 +32,7 @@ export class AppComponent {
   }
 
   add(selectedPlayer: number) {
-    if (this.showSet) {
+    if (this.showWinText || this.useable === false) {
       return;
     }
     let player = selectedPlayer === 1 ? this.game.player1 : this.game.player2;
@@ -42,19 +44,19 @@ export class AppComponent {
       if (player.sets === 2) {
         player.sets++;
         this.winText = `Speler ${selectedPlayer} heeft gewonnen!`;
-        this.showSet = true
+        this.showWinText = true;
+        this.winner = selectedPlayer;
+        this.useable = false;
+        this.reset = 'Opnieuw spelen';
         setTimeout(() => {
-          this.showSet = false
+          this.showWinText = false
         }, 10000);
       } else {
         this.winText = `Set voor speler ${selectedPlayer}`;
-        this.showSet = true;
-        setTimeout(() => {
-          player.sets++;
-          player.score = 0;
-          opponent.score = 0;
-          this.showSet = false;
-        }, 1500);
+        this.winner = selectedPlayer;
+        this.showWinText = true;
+        player.sets++;
+        this.reset = 'Volgende set'
       }
     }
   }
@@ -62,12 +64,46 @@ export class AppComponent {
 
   min(selectedPlayer: number) {
     let player = selectedPlayer === 1 ? this.game.player1 : this.game.player2;
-    if (player.score > 0) {
-      player.score--;
+    let opponent = selectedPlayer === 1 ? this.game.player2 : this.game.player1;
+    if (this.winner === 0) {
+      if (player.score > 0) {
+        this.reset = 'Reset'
+        this.showWinText = false
+        this.useable = true
+        player.score--;
+      }
+    } else {
+      if (selectedPlayer === this.winner) {
+        player.sets--;
+        player.score--;
+        this.winner = 0;
+        this.useable = true;
+        this.showWinText = false;
+      } else {
+        if ((selectedPlayer === this.winner) === false)
+          return
+      }
     }
   }
 
-  reset() {
-    this.game = this.newGame();
+  resetNext() {
+    if (this.reset === 'Reset') {
+      this.game = this.newGame();
+      this.showWinText = false;
+      this.useable = true
+    }
+    if (this.reset === 'Volgende set') {
+      this.useable = true;
+      this.game.player1.score = 0;
+      this.game.player2.score = 0;
+      this.showWinText = false;
+      this.reset = 'Reset'
+    }
+    if (this.reset === 'Opnieuw spelen') {
+      this.game = this.newGame();
+      this.showWinText = false;
+      this.useable = true;
+      this.reset = 'Reset'
+    }
   }
 }
