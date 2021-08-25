@@ -14,6 +14,7 @@ export class AppComponent {
   reset = 'Reset';
   winner = 0;
 
+
   constructor() {
     this.game = this.newGame();
   }
