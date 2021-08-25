@@ -1,0 +1,12 @@
+{
+  "defaultProject": "scoreboard",
+  "projects": {
+    "scoreboard": {
+      "name": "scoreboard",
+      "integrations": {
+        "capacitor": {}
+      },
+      "type": "angular"
+    }
+  }
+}
