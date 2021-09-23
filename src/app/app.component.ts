@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Game } from './models/model';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+
+
 
 @Component({
   selector: 'app-root',
@@ -13,7 +16,6 @@ export class AppComponent {
   useable = true;
   reset = 'Reset';
   winner = 0;
-
 
   constructor() {
     this.game = this.newGame();
@@ -66,23 +68,28 @@ export class AppComponent {
   min(selectedPlayer: number) {
     let player = selectedPlayer === 1 ? this.game.player1 : this.game.player2;
     let opponent = selectedPlayer === 1 ? this.game.player2 : this.game.player1;
-    if (this.winner === 0) {
+    if ((this.winner === 0)) {
       if (player.score > 0) {
-        this.reset = 'Reset'
-        this.showWinText = false
-        this.useable = true
+        this.reset = 'Reset';
+        this.showWinText = false;
+        this.useable = true;
         player.score--;
+      } else {
+        return;
       }
     } else {
-      if (selectedPlayer === this.winner) {
+      if ((selectedPlayer === this.winner) && (player.score > 0)) {
+        this.reset = 'Reset';
         player.sets--;
         player.score--;
         this.winner = 0;
         this.useable = true;
         this.showWinText = false;
       } else {
-        if ((selectedPlayer === this.winner) === false)
-          return
+        if ((selectedPlayer === this.winner) === false) {
+          this.winner = 0;
+          return;
+        }
       }
     }
   }
