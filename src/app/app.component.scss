@@ -1,100 +1,87 @@
 $scale: 4vw;
-
 $fontSize: $scale * 2;
 $itemWidth: $scale * 6;
 $borderRadius: $scale * 0.5;
 $borderStyle: ($scale * 0.1) solid black;
 $itemMargin: 0.5 * $fontSize;
-
 .board-wrapper {
-  width: 100vw;
-  height: 100vh;
-  user-select: none;
-  background-color: rgb(59, 59, 59);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  .board {
-    margin: $itemMargin;
-    width: $itemWidth;
-
-    .add,
-    .min {
-      background-color: white;
-      height: $fontSize;
-      cursor: pointer;
-      font-size: $fontSize;
-      line-height: $fontSize;
-      border: $borderStyle;
-      margin: $scale * 0.2 0;
-    }
-
-    .add {
-      border-top-left-radius: $borderRadius;
-      border-top-right-radius: $borderRadius;
-    }
-
-    .min {
-      border-bottom-left-radius: $borderRadius;
-      border-bottom-right-radius: $borderRadius;
-    }
-
-    .score {
-      background-color: white;
-      height: 1.5 * $fontSize;
-      font-size: 1.5 * $fontSize;
-      line-height: 1.5 * $fontSize;
-      border: $borderStyle;
-    }
-  }
-
-  .middle-board {
+    width: 100vw;
+    height: 100vh;
+    user-select: none;
+    background-color: rgb(112, 112, 112);
     display: flex;
-    flex-direction: column;
-    margin: 0.5 $itemMargin;
-    justify-content: space-evenly;
-
-    .set-message {
-      color: white;
-      font-size: 0.4 * $fontSize;
-      min-height: 0.6 * $fontSize;
-    }
-
-    .sets {
-      flex-direction: row;
-      display: flex;
-      justify-content: center;
-      margin: $itemMargin;
-
-      .set {
-        font-size: 0.5 * $fontSize;
-        background-color: white;
-        border: $borderStyle;
-        border-radius: $borderRadius;
-        width: 0.2 * $itemWidth;
-        margin: 0.5 * $itemMargin;
-        height: 1.5;
-      }
-    }
-
-    .reset-wrapper {
-      display: flex;
-      justify-content: center;
-      flex-direction: row;
-
-      .reset {
-        font-size: 0.5 * $fontSize;
-        background-color: white;
-        cursor: pointer;
-        text-align: center;
-        height: 1.5;
-        border: $borderStyle;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .board {
+        margin: $itemMargin;
         width: $itemWidth;
-        border-radius: $borderRadius;
-        margin: 0 0.5 * $itemMargin;
-      }
+        .add,
+        .min {
+            background-color: white;
+            height: $fontSize;
+            cursor: pointer;
+            font-size: $fontSize;
+            line-height: $fontSize;
+            border: $borderStyle;
+            margin: $scale * 0.2 0;
+        }
+        .add {
+            border-top-left-radius: $borderRadius;
+            border-top-right-radius: $borderRadius;
+        }
+        .min {
+            border-bottom-left-radius: $borderRadius;
+            border-bottom-right-radius: $borderRadius;
+        }
+        .score {
+            background-color: white;
+            height: 1.5 * $fontSize;
+            font-size: 1.5 * $fontSize;
+            line-height: 1.5 * $fontSize;
+            border: $borderStyle;
+        }
     }
-  }
+    .middle-board {
+        display: flex;
+        flex-direction: column;
+        margin: 0.5 $itemMargin;
+        justify-content: space-evenly;
+        .set-message {
+            color: white;
+            font-size: 0.4 * $fontSize;
+            min-height: 0.6 * $fontSize;
+        }
+        .sets {
+            flex-direction: row;
+            display: flex;
+            justify-content: center;
+            margin: $itemMargin;
+            .set {
+                font-size: 0.5 * $fontSize;
+                background-color: white;
+                border: $borderStyle;
+                border-radius: $borderRadius;
+                width: 0.2 * $itemWidth;
+                margin: 0.5 * $itemMargin;
+                height: 1.5;
+            }
+        }
+        .reset-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            .reset {
+                font-size: 0.5 * $fontSize;
+                background-color: white;
+                cursor: pointer;
+                text-align: center;
+                height: 1.5;
+                border: $borderStyle;
+                width: $itemWidth;
+                border-radius: $borderRadius;
+                margin: 0 0.5 * $itemMargin;
+            }
+        }
+    }
 }
